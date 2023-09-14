@@ -18,7 +18,7 @@ async fn main() -> Result<(), std::io::Error> {
     );
     let connection_pool = PgPoolOptions::new()
         .acquire_timeout(std::time::Duration::from_secs(2))
-        .connect_lazy(&configuration.database.connection_string().expose_secret())
+        .connect_lazy_with(configuration.database.with_db())
         .expect("Failed to create postgres connection pool");
     let listener = TcpListener::bind(address).expect("failed to bind to random port");
 

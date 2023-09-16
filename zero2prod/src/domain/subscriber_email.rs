@@ -24,9 +24,8 @@ mod tests {
     use super::SubscriberEmail;
     use claims::assert_err;
     use fake::faker::internet::en::SafeEmail;
-    use fake::{Fake, Faker};
+    use fake::{Fake};
 
-    use quickcheck::Gen;
 
     #[derive(Debug, Clone)]
     struct ValidEmailFixture(pub String);

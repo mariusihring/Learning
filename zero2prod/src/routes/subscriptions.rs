@@ -1,10 +1,8 @@
 use crate::domain::{NewSubscriber, SubscriberEmail, SubscriberName};
 use actix_web::{web, HttpResponse};
-use actix_web::cookie::time::format_description::parse;
 use chrono::Utc;
 use sqlx::PgPool;
 use tracing::Instrument;
-use unicode_segmentation::UnicodeSegmentation;
 use uuid::Uuid;
 
 #[derive(serde::Deserialize)]
